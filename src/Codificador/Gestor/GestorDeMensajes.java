@@ -6,11 +6,11 @@ import Codificador.Mensaje;
 import java.io.IOException;
 
 public class GestorDeMensajes {
-    private String ArchivoEntrada = "Mensaje de entrada"; //Archivo para ingresar el mensaje
+    private String ArchivoEntrada = "Mensaje.txt"; //Archivo para ingresar el mensaje
 
     public void guardarMensaje(Mensaje msj){//Guardar mensaje
 
-        try(FileWriter lapiz = new FileWriter("Mensaje de entrada")){
+        try(FileWriter lapiz = new FileWriter("Mensaje.txt",false)){//false para sobre escribir
             lapiz.write(msj.getMsj());
             System.out.println("Mensaje guardado");
 
@@ -19,5 +19,10 @@ public class GestorDeMensajes {
         }
 
     }
+
+    public void leerMensaje(){
+
+    }
+
 
 }

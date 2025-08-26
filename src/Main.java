@@ -1,3 +1,4 @@
+import Codificador.Atbash.CifradoAtbash;
 import Codificador.Mensaje;
 import Codificador.Gestor.GestorDeMensajes;
 
@@ -8,16 +9,26 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sn = new Scanner(System.in);
+        //obj
         GestorDeMensajes gestor = new GestorDeMensajes();
+        CifradoAtbash cifrar = new CifradoAtbash();
+        StringBuilder msj = new StringBuilder();
 
-        //Pedir mensaje
-        System.out.println("Ingrese el mensaje");
-        String msj = sn.nextLine();
+        System.out.println("✍ Ingrese el mensaje (〜￣▽￣)〜");//Pedir mensaje
 
-        //instanciando mensaje
-        Mensaje obj = new Mensaje(msj);
-        gestor.guardarMensaje(obj);//mandar mensaje
+        while(true){
+            String linea = sn.nextLine();// lectura linea por linea
+            if(linea.isEmpty())break;//rompemos ciclo
+            msj.append(linea).append("\n");// agrega linea + salto
+        }
 
+        String obj= cifrar.proceso(msj.toString());
+
+        Mensaje objguardar = new Mensaje(obj);//instanciando mensaje
+        gestor.guardarMensaje(objguardar);//guardo mensaje
+
+        System.out.println("🐱‍💻 Mensaje: ");
+       // System.out.println(mensaje.txt);
 
     }
 }
