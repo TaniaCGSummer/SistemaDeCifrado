@@ -1,9 +1,8 @@
 package Codificador.Gestor;
 
-import  java.io.FileWriter;
-import Codificador.Mensaje;
+import java.io.*;
 
-import java.io.IOException;
+import Codificador.Mensaje;
 
 public class GestorDeMensajes {
     private String ArchivoEntrada = "Mensaje.txt"; //Archivo para ingresar el mensaje
@@ -12,8 +11,6 @@ public class GestorDeMensajes {
 
         try(FileWriter lapiz = new FileWriter("Mensaje.txt",false)){//false para sobre escribir
             lapiz.write(msj.getMsj());
-            System.out.println("Mensaje guardado");
-
         } catch (IOException e) {
             System.out.println("Ocurrió un error al guardar el archivo");
         }
@@ -22,7 +19,19 @@ public class GestorDeMensajes {
 
     public void leerMensaje(){
 
-    }
+        try (BufferedReader buffer = new BufferedReader(new FileReader(ArchivoEntrada))){
+            String linea;
+            System.out.println("🗣 Mensaje: ");
 
+            while((linea = buffer.readLine())!= null){
+                // lectura linea por linea
+                if(!linea.isEmpty()) {
+                    System.out.println(linea );// agrega linea + salto
+                }
+            }
 
+ } catch (IOException e){
+            System.out.println(" ");
+        }
+}
 }

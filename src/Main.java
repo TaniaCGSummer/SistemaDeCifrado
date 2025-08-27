@@ -14,7 +14,9 @@ public class Main {
         CifradoAtbash cifrar = new CifradoAtbash();
         StringBuilder msj = new StringBuilder();
 
-        System.out.println("✍ Ingrese el mensaje (〜￣▽￣)〜");//Pedir mensaje
+        System.out.println("🐱‍👤 Bienvenido al sistema de cifrado 😎");
+
+        System.out.println("✍ Ingrese el mensaje (〜￣▽￣)〜 (recuerda presionar enter para cifrar)");//Pedir mensaje
 
         while(true){
             String linea = sn.nextLine();// lectura linea por linea
@@ -26,9 +28,7 @@ public class Main {
 
         Mensaje objguardar = new Mensaje(obj);//instanciando mensaje
         gestor.guardarMensaje(objguardar);//guardo mensaje
-
-        System.out.println("🐱‍💻 Mensaje: ");
-       // System.out.println(mensaje.txt);
+        gestor.leerMensaje();//imprimir
 
     }
 }

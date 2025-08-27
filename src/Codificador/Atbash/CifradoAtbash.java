@@ -8,7 +8,7 @@ public class CifradoAtbash  {
     public String proceso(String mensaje){
         StringBuilder  resultado = new StringBuilder();
 
-        System.out.println("👀 Tranformando: "+ mensaje);
+        System.out.println("👀 Tranformando tu mensaje ");
 
         for(int i=0; i< mensaje.length(); i++){
             char letra = mensaje.charAt(i);//Devuelve la letra actual (por cada iteracion)
